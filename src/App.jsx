@@ -1,15 +1,18 @@
-import { Fragment } from "react"
-import User from "./User"
+import { useState } from "react"
 
-
-const App = ()=>{
+const App=()=>{
+    const [first,last]=useState("hello world")
+    const changetext=()=>{
+        last("hello hosein")
+    }
     return(
 <div>
-<User id={1} name={"hosein"} phone={9909302575} job={"developer"} />
-<User id={2} name={"javad"} phone={9133323046} job={"methal engenier"} />
+    <button onClick={changetext}>click</button>
+    <span >{first}</span>
 </div>
     )
+
+
+
 }
-
 export default App
-
