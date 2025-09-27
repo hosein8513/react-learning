@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Childcomponent from "./childcomponent"
 
 const App=()=>{
     const [first,last]=useState("hello world")
@@ -9,6 +10,9 @@ const App=()=>{
 <div>
     <button onClick={changetext}>click</button>
     <span >{first}</span>
+    <childcomponent text={first}>
+        <p>children</p>
+    </childcomponent>
 </div>
     )
 
