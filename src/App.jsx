@@ -1,18 +1,15 @@
-import { useState } from "react"
-import Childcomponent from "./childcomponent"
-
+import User from "./User"
 const App=()=>{
-    const [first,last]=useState("hello world")
-    const changetext=()=>{
-        last("hello hosein")
-    }
+  const user = [
+    {id:1,name:"hosein",phone:990,job:"developer"},
+    {id:2,name:"ali",phone:991,job:"trainer"},
+    {id:3,name:"javad",phone:913,job:"engenier"}
+  ]
     return(
 <div>
-    <button onClick={changetext}>click</button>
-    <span >{first}</span>
-    <childcomponent text={first}>
-        <p>children</p>
-    </childcomponent>
+ {user.map((user)=>(
+    <User key={user.name} id={user.id} name={user.name} phone={user.phone} job={user.job}/>
+ ))}
 </div>
     )
 
