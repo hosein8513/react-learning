@@ -1,5 +1,6 @@
 
-const User = ({id,name,phone,job}) => {
+const User = ({id,name,phone,job,handledelete}) => {
+    
     
     return (
         <div>
@@ -9,6 +10,7 @@ const User = ({id,name,phone,job}) => {
                 <li><strong>name:</strong>{name}</li>
                 <li><strong>phone:</strong>{phone}</li>
                 <li><strong>job:</strong>{job}</li>
+                <button onClick={handledelete}>delete</button>
             </ul>
         </div>
     );
