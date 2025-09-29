@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const User = () => {
     
     const [age,setage]=useState(19)
-  
+  useEffect(()=>{
+    console.log("wellcome");
+    return()=>{
+    console.log("hope to see you again")
+    }
+  },[])
+  useEffect(()=>{
+    if(age==27){
+        console.log("you are overage");
+        
+    }
+  },[age])
     return (
       <div>
         <h1>User</h1>
