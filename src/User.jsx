@@ -1,18 +1,19 @@
+import { useState } from "react";
 
-const User = ({id,name,phone,job,handledelete}) => {
+const User = () => {
     
-    
+    const [age,setage]=useState(19)
+  
     return (
-        <div>
-            <h2>Users information</h2>
-            <ul>
-                <li><strong>id:</strong>{id}</li>
-                <li><strong>name:</strong>{name}</li>
-                <li><strong>phone:</strong>{phone}</li>
-                <li><strong>job:</strong>{job}</li>
-                <button onClick={handledelete}>delete</button>
-            </ul>
-        </div>
+      <div>
+        <h1>User</h1>
+        <button onClick={()=> setage((pre)=>pre+1)}>age</button>
+        <ul>
+            <li>name:hosein</li>
+            <li>age:{age}</li>
+        </ul>
+       
+      </div>
     );
 };
 
