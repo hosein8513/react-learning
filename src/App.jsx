@@ -10,11 +10,20 @@ const App=()=>{
   const[puser,fuser]=useState(user)
 
   const handledelete = (name)=>{
-const newuser = puser.filter((user) => user.name !== name)
+    fuser((preuser)=>{
+  const newuser = preuser.filter((user) => user.name !== name)
+  return newuser
+
+})
+    }
+
+    const setsearch = (char)=>{
+const newuser= user.filter((user)=>user.name.toLocaleLowerCase().includes(char.toLocaleLowerCase())||user.job.includes(char))
 fuser(newuser)
     }
     return(
 <div>
+  <input type="text" onChange={(e)=>setsearch(e.target.value)} />
  {puser.map((user)=>(
     <User key={user.name} id={user.id} name={user.name} phone={user.phone} job={user.job} handledelete={()=>handledelete(user.name)}/>
  ))}
