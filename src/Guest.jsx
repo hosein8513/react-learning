@@ -1,7 +1,7 @@
-
+import "./guest.css"
 const guest = () => {
     return (
-        <div>
+        <div className="guestdiv">
             <h1>guest User</h1>
             <p>plese log in </p>
         </div>

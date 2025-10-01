@@ -6,7 +6,7 @@ const App=()=>{
 const[islogined,setislogined]=useState(false)
 return(
   <div>
-    <button onClick={()=>setislogined(!islogined)}>
+    <button className={`login ${islogined ?"danger":"success"}`} onClick={()=>setislogined(!islogined)}>
       {islogined?"logout":"login"}
     </button>
     {islogined?<User/>:<Guest/>}
