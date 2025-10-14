@@ -1,76 +1,22 @@
-import { useEffect, useReducer, } from "react"
-const initialuser = {
-  data: null,
-  loading: true,
-  error: null
-}
-
-const datareducer = (state, action) => {
-  switch (action.type) {
-    case "fetch start":
-      return { loading: true, data: null, error: null }
-    case "fetch success":
-      return { loading: false, data: action.payload, error: null }
-    case "fetch error":
-      return { loading: false, data: null, error: action.payload }
-    default:
-      return state
-  }
-}
+import { useState } from "react";
+import Users from "./Users";
+import Posts from "./Posts";
 const App = () => {
-  const [state, dispatch] = useReducer(datareducer, initialuser)
-
-  useEffect(() => {
-    dispatch({ type: "fetch start" })
-
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => dispatch({ type: "fetch success", payload: data }))
-      .catch(() => dispatch({ type: "fetch error", payload: "error to get data" }))
-  }, [])
-
-
-  if (state.loading) {
-    return (
-      <div className="h-[100dvh] flex justify-center items-center">
-        <div className="w-[35%] h-[35%] flex flex-col justify-center items-center animate-pulse">
-          <div className="rounded-full w-16 h-16 bg-indigo-500"></div>
-          <p className="text-indigo-500 text-[15px] font-semibold">loading</p>
-        </div>
-      </div>
-    )
-  }
-  if (state.error) {
-    return (
-      <div className="h-[100dvh] flex justify-center items-center bg-red-100">
-        <div className="w-[35%] h-[35%] flex flex-col justify-center items-center rounded-lg border border-red-500">
-          <i className="rounded-full w-16 h-16 bg-red-500 fas fa-exclamation border border-red-500"></i>
-          <p className="text-red-500 text-[15px] font-semibold">{state.error}</p>
-        </div>
-      </div>
-    )
-  }
+   const [page, setPage] = useState("posts");
   return (
-    <div className="w-[100dvw] flex justify-center items-center flex-col gap-4">
-      <h1 className="text-indigo-500 text-[35px] font-extrabold">users list</h1>
-      <div className="w-[80%] flex flex-wrap gap-4 justify-center items-center">
-        {state.data.map((user) => {
-          return(
-          <div key={user.id} className="w-[250px] h-[200px] rounded-lg shadow shadow-gray-400 ">
-            <div className="w-full h-[40%] bg-gradient-to-r from-indigo-500 to-purple-500  flex flex-col rounded-lg p-4">
-              <span className="text-white text-[20px] font-semibold">{user.name}</span>
-              <span className="text-white text-[15px]">@{user.username}</span>
-            </div>
-            <div className="w-full h-[60%] flex flex-col gap-4 p-4">
-              <span className="text-[15px]"><i className="text-indigo-500 fas fa-envelope mx-1.5"></i>{user.email}</span>
-              <span className="text-[15px]"><i className="text-indigo-500 fas fa-phone mx-1.5"></i>{user.phone}</span>
-              <span className="text-[15px]"><i className="text-indigo-500 fas fa-globe mx-1.5"></i>{user.website}</span>
-            </div>
-          </div>)
-        })}
+    <div className="min-w-screen flex justify-center items-center p-4 gap-3">
+      <div className="w-[70%] rounded-lg border bg-orange-200 flex flex-col p-4 gap-4 justify-center items-center">
+      <h1 className="text-[25px] font-bold text-indigo-500 text-center">React App</h1>
+        <div className="w-full flex gap-4 p-4 justify-center items-center">
+          <button className={`w-[15%] h-[40px] rounded-lg border-0 ${page === "users" ?"bg-indigo-600 text-white":"bg-gray-300 text-black"}`} onClick={()=>setPage("users")}>USERS</button>
+          <button className={`w-[15%] h-[40px] rounded-lg border-0 ${page === "posts" ?"bg-indigo-600 text-white":"bg-gray-300 text-black"}`} onClick={()=>setPage("posts")}>POSTS</button>
+        </div>
+        <div className="p-4">
+          {page === "users" && <Users/>}
+          {page === "posts" && <Posts/>}
+        </div>
       </div>
     </div>
-
-  )
+     );
 }
 export default App;
