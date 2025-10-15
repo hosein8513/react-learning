@@ -7,7 +7,7 @@ const Posts = () => {
   if (error) return <div className='w-full flex justify-center items-center p-4'><span className='text-[20px] font-semibold text-red-600'>ERROR TO GET DATA :{error}</span></div>
   return (
     <div>
-      <h2 className="text-[20px] font-semibold text-indigo-500">RECENT POSTS</h2>
+      <h2 className="text-[20px] font-semibold text-indigo-500 text-center p-4">RECENT POSTS</h2>
       <div className="grid grid-cols-2 gap-6">
         {data.map((post) => (
           <div key={post.id} className="bg-white border rounded-lg flex flex-col gap-4">

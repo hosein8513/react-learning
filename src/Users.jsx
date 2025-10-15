@@ -6,7 +6,7 @@ const Users = () => {
   if (error) return <div className='w-full flex justify-center items-center p-4'><span className='text-[20px] font-semibold text-red-600'>ERROR TO GET DATA :{error}</span></div>
   return (
     <div className='w-[750px] p-4 rounded-lg border-0 flex justify-center items-center flex-col'>
-      <h2 className='text-[20px] font-semibold text-indigo-500'>USERS LIST</h2>
+      <h2 className='text-[20px] font-semibold text-indigo-500 p-4'>USERS LIST</h2>
       <ul className='bg-white w-[90%] rounded-lg'>
         {data.map((users) => (
           <li key={users.id} className='p-4 w-[full]'>
