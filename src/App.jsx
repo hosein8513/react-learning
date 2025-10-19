@@ -1,6 +1,9 @@
 import Users from "./Users";
 import Posts from "./Posts";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router";
+import Adduser from "./adduser";
+import Userdetails from "./Userdetails";
+
 const App = () => {
   return (
     <div className="min-w-screen flex justify-center items-center p-4 gap-3">
@@ -12,7 +15,10 @@ const App = () => {
         </div>
         <div className="p-4">
           <Routes>
-            <Route path="/users" element={<Users />} />
+            <Route path="/users" element={<Users />}>
+            <Route path="adduser" element={<Adduser/>}/>
+            <Route path="user-details/:userId" element={<Userdetails/>}/>
+            </Route>
             <Route path="/posts" element={<Posts />} />
           </Routes>
 
