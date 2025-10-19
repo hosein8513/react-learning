@@ -15,7 +15,7 @@ const Adduser = () => {
                     </div>
                     <button className='w-[80px] h-[40px] rounded-lg bg-blue-500 text-white'>add user</button>
                 </form>
-                <Link to={"users"} className='w-[80px] h-[40px] rounded-lg bg-gray-600 text-center text-white'>CANCEL</Link>
+                <Link to={"/users"} className='w-[80px] h-[40px] rounded-lg bg-gray-600 text-center text-white'>CANCEL</Link>
             </div>
         </div>
     );
