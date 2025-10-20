@@ -13,7 +13,7 @@ const Users = () => {
       <ul className='bg-white w-[90%] rounded-lg'>
         {data.map((users) => (
           <li key={users.id} className='p-4 w-[full]'>
-            <Link to={`/users/user-details/${users.id}`} className='w-full flex gap-3 relative items-center'>
+            <Link to={`/users/user-details/${users.id}`} state={users} className='w-full flex gap-3 relative items-center'>
               <div className='w-[50px] h-[50px] rounded-full bg-indigo-500 text-white flex justify-center items-center'>{users.name.charAt(0)}</div>
               <span className='text-[15px] font-semibold text-indigo-500'>{users.name}</span>
               <div className='absolute right-2 flex items-center gap-1 transition-all duration-150'><i className='text-indigo-400 fas fa-envelope'></i>
