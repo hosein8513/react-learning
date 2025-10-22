@@ -1,7 +1,7 @@
 import { Children, createContext, useState } from "react"
 
-const initialusers=[
-    {id:1,name:"hosein",email:"hosein@.com"},
+const initialusers =[
+    {id:1,name:"hosein",email:"hossein@.com"},
     {id:2,name:"ali",email:"ali@.com"},
     {id:3,name:"javad",email:"javad@.com"},
     {id:4,name:"masih",email:"masih@.com"},
@@ -10,17 +10,13 @@ const initialusers=[
     {id:7,name:"mohamad",email:"mohamad@.com"}
 ]
 
-export const Usercontext=createContext({
-    users:[],
-    setusers:()=>{},
-    addusers:()=>{},
-    deleteuser:()=>{}
-})
+
+export const Usercontext = createContext()
 
 const UsercontextProvider=({children})=>{
-    const [users,setusers]=useState(initialusers)
-    const adduser=(user)=>{
-        setusers([...users,user])
+    const[users,setusers]=useState(initialusers)
+    const adduser = (user)=>{
+setusers(...users,user)
     }
     const deleteuser=(id)=>{
         setusers(users.filter((user)=>user.id !== id))
@@ -29,8 +25,10 @@ const UsercontextProvider=({children})=>{
     return(
         <Usercontext.Provider value={{users,setusers,adduser,deleteuser}}>
             {children}
-            </Usercontext.Provider>
+        </Usercontext.Provider>
     )
 }
+
+
 
 export default UsercontextProvider

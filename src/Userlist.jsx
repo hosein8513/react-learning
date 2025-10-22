@@ -1,18 +1,19 @@
-import { useContext } from "react";
-import { Usercontext } from "./Usercontext";
-import Useritem from "./Useritem";
+import React, { useContext, useState } from 'react';
+import { Usercontext } from './Usercontext';
+import Useritem from './Useritem';
+import Adduser from './Adduser';
 
 const Userlist = () => {
     const {users}=useContext(Usercontext)
+    const [show,setshow]=useState(false)
     return (
-        <div className="bg-white ">
-            <h1 className="text-[20px] font-semibold">
-                USERS LIST
-            </h1>
-            <ul className="border border-gray-300 grid grid-cols-4 gap-4 p-4">
+        <div className='p-4  bg-gray-200 rounded-lg'>
+            <button className='w-[90px] h-[50px] bg-blue-400 text-white rounded-lg m-4' onClick={()=>setshow(true)}>ADD USER</button>
+            {show && <Adduser setshow={setshow}/>}
+            <ul className='p-4 border rounded-lg grid grid-cols-4 gap-4'>
                 {users.map((user)=>(
-                    <li key={user.id} className="p-4">
-                        <Useritem user={user}/>
+                    <li key={user.id}>
+                       <Useritem user={user}/>
                     </li>
                 ))}
             </ul>
