@@ -19,7 +19,7 @@ const Adduser = ({setshow}) => {
                         <label>email:</label>
                         <input type="email" className='h-[30px] rounded-lg bg-gray-200 border'/>
                     </div>
-                    <button className='w-[90px] h-[50px] rounded-lg bg-green-400 text-white font-semibold'>ADD</button>
+                    <button className='w-[90px] h-[50px] rounded-lg bg-green-600 text-white font-semibold'>ADD</button>
                 </form>
             </form>
             
