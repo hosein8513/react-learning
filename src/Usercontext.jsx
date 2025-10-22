@@ -14,6 +14,7 @@ const initialusers =[
 export const Usercontext = createContext()
 
 const UsercontextProvider=({children})=>{
+    const [permition,setpermition]=useState(true)
     const[users,setusers]=useState(initialusers)
     const adduser = (user)=>{
 setusers(...users,user)
@@ -23,7 +24,7 @@ setusers(...users,user)
     }
 
     return(
-        <Usercontext.Provider value={{users,setusers,adduser,deleteuser}}>
+        <Usercontext.Provider value={{users,setusers,adduser,deleteuser,permition,setpermition}}>
             {children}
         </Usercontext.Provider>
     )

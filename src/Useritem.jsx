@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Usercontext } from './Usercontext';
+import { HOC } from './HOC';
 
 const Useritem = ({user}) => {
     const {deleteuser} = useContext(Usercontext)
@@ -12,4 +13,4 @@ const Useritem = ({user}) => {
     );
 };
 
-export default Useritem;
+export default HOC(Useritem);

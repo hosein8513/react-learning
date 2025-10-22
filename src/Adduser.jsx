@@ -1,5 +1,6 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
+import { HOC } from './HOC';
 
 const Adduser = ({setshow}) => {
     return createPortal((
@@ -26,4 +27,4 @@ const Adduser = ({setshow}) => {
     ),document.getElementById("modal-root"))
 };
 
-export default Adduser;
+export default HOC(Adduser);
