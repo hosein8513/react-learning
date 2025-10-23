@@ -1,14 +1,12 @@
-import Userlist from "./Userlist";
-
+import Normalcomp from "./Normalcomp";
 
 const App = () => {
 
 
   return (
-   <div className="p-4 bg-gray-200 rounded-lg">
-    <h1 className="text-[30px] font-bold">USERS LIST</h1>
-    <Userlist/>
-   </div>
+    <div className="w-[500px]">
+      <Normalcomp/>
+    </div>
   );
 }
 export default App;
