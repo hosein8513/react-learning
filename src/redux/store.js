@@ -1,7 +1,7 @@
 import { createStore } from "redux";
-import reducer from "./fruit/fruitreducer";
+import { rootreducer } from "./rootreducer";
 
-const store =createStore(reducer)
+const store =createStore(rootreducer)
 
 
 export default store

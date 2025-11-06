@@ -5,7 +5,7 @@ const fruit ={
     orange:15
 }
 
-const reducer =(state=fruit,action)=>{
+const fruitreducer =(state=fruit,action)=>{
 switch(action.type){
     case buyapple:
     return{...state,apple:state.apple-1}
@@ -18,4 +18,4 @@ switch(action.type){
 }
 }
 
-export default reducer
+export default fruitreducer
