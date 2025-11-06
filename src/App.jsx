@@ -1,16 +1,16 @@
-import { useState } from "react";
-import Childcomp from "./Childcomp";
-import Counter from "./Counter";
+import React from 'react';
+import Mystore from './Mystore';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 const App = () => {
-console.log("app rerendered");
-
-const [count,setcount]=useState(0)
   return (
-    <div className="flex flex-col justify-center items-center">
-<Childcomp/>
-<Counter count={count} setcount={setcount}/>
+    <Provider store={store}>
+    <div>
+      <Mystore/>
     </div>
+    </Provider>
   );
-}
+};
+
 export default App;
