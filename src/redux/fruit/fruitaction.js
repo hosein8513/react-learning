@@ -1,13 +1,15 @@
 import { buyapple, buyorange } from "./fruittype"
 
-export const Buyapple = ()=>{
+export const Buyapple = (count)=>{
     return {
-        type: buyapple
+        type: buyapple,
+        payload:count
     }
 }
 
-export const Buyorange =()=>{
+export const Buyorange =(count)=>{
     return {
-        type: buyorange
+        type: buyorange,
+        payload:count
     }
 }

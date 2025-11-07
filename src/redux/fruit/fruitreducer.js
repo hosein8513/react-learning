@@ -8,9 +8,9 @@ const fruit ={
 const fruitreducer =(state=fruit,action)=>{
 switch(action.type){
     case buyapple:
-    return{...state,apple:state.apple-1}
+    return{...state,apple:state.apple-action.payload}
     case buyorange:
-        return{...state,orange:state.orange-1}
+        return{...state,orange:state.orange-action.payload}
 
         default:
             return state
