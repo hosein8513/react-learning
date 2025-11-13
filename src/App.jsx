@@ -1,15 +1,15 @@
-import React from 'react';
-import Mystore from './Mystore';
-import { Provider } from 'react-redux';
-import store from './redux/store';
+import { Provider } from "react-redux";
+import { Store } from "../redux/store";
+import Usercomp from "./usercomp";
 
 const App = () => {
+ 
   return (
-    <Provider store={store}>
+    <Provider store={Store}>
     <div>
-      <Mystore/>
+   <Usercomp/>
     </div>
-    </Provider>
+  </Provider>
   );
 };
 
