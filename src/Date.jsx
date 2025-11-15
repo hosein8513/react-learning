@@ -1,13 +1,16 @@
 import moment from 'moment-jalaali';
 import React, { useEffect, useState } from 'react';
 
+
 const day = [
+    
     "یکشمبه",
     "دوشنبه",
     "سه شنبه",
     "چهار شنبه",
     "پنجشنبه",
-    "جمعه"
+    "جمعه",
+    "شنبه"
 ]
 
 const mounth = [
@@ -28,7 +31,7 @@ const mounth = [
 
 
 
-const Date = () => {
+const Datem = () => {
     const [date,setdate] = useState('')
     const [time,settime] = useState('')
     useEffect(()=>{
@@ -45,4 +48,4 @@ const Date = () => {
     );
 };
 
-export default Date;   
+export default Datem;   

@@ -1,22 +1,6 @@
-import {
-    createStore
-} from "redux";
-import {
-    Reducer
-} from "./weather/reducer";
-import {
-    applyMiddleware
-} from "redux";
-import {
-    createSagaMiddleware
-} from "redux-saga"
-import {
-    weathersaga
-} from "./weather/weathersaga";
+import { createStore } from "redux";
+import { Reducer } from "./weather/reducer";
+import { applyMiddleware } from "redux";
+import { thunk } from "redux-thunk";
 
-const saga = createSagaMiddleware()
-
-export const Store = createStore(Reducer, applyMiddleware(saga))
-
-
-saga.run(weathersaga)
+export const Store = createStore(Reducer,applyMiddleware(thunk))
