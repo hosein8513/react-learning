@@ -25,7 +25,7 @@ useEffect(()=>{
    }else{
       setback("hot")
    }
-},[])
+},[data])
 
    return (
       <div className={`flex flex-col items-center  bg-cover inset-0 w-full h-screen ${back}`}>
