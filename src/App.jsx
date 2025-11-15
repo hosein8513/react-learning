@@ -1,15 +1,15 @@
 import { Provider } from "react-redux";
+import Weather from "./Weather";
 import { Store } from "../redux/store";
-import Usercomp from "./usercomp";
+
 
 const App = () => {
- 
   return (
     <Provider store={Store}>
-    <div>
-   <Usercomp/>
-    </div>
-  </Provider>
+      <div>
+        <Weather />
+      </div>
+    </Provider>
   );
 };
 

@@ -2,19 +2,23 @@ import {
     recivee,
     reciver,
     sendr
-} from "./usertype"
+} from "./type"
 
-const userIn = {
+const In = {
     loading: false,
     data: [],
     error: ''
 }
 
-const userReducer = (state = userIn, action) => {
+
+
+
+
+export const Reducer = (state = In, action) => {
     switch (action.type) {
         case sendr:
             return {
-                loading: true, data: [], error: ''
+                ...state, loading: true
             }
             case reciver:
                 return {
@@ -24,9 +28,8 @@ const userReducer = (state = userIn, action) => {
                     return {
                         loading: false, data: [], error: action.payload
                     }
+
                     default:
                         return state
     }
 }
-
-export default userReducer

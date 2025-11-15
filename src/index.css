@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+
+
+.cold{
+background-image:url(/images/cold.jpg);
+}
+.warm{
+    background-image: url(/images/warm.jpg);
+}
+
+.hot{
+    background-image: url(/images/hot.jpg);
+}
