@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
  import { useDispatch, useSelector } from 'react-redux';
-import { getweatherinfo } from '../redux/weather/action';
 import Datem from './Date';
+import { Request } from '../redux/weather/action';
 
 const Weather = () => {
    const { loading, data, error } = useSelector(state => state)
@@ -10,7 +10,7 @@ const Weather = () => {
    const [query,setquery] = useState('')
    const handlegetweather = (e) => {
       e.preventDefault()
-      dispatch(getweatherinfo(query))
+      dispatch(Request(query))
       setquery('')
    }
 useEffect(()=>{

@@ -22,7 +22,8 @@ export const Reducer = (state = In, action) => {
             }
             case reciver:
                 return {
-                    loading: false, data: action.payload, error: ''
+                    loading: false, data: action.payload, error: '',
+                    
                 }
                 case recivee:
                     return {
